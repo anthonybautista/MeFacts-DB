@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MeFacts_DB"
+             mc:Ignorable="d"
+             x:Class="MeFacts_DB.MainPage">
+
+    <StackLayout>
+        <ListView x:Name="listView"
+              RowHeight="70" ItemSelected="OnSelection" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5, 5, 0, 5"
+                                 Orientation="Horizontal"
+                                 Spacing="15">
+                            <Grid RowSpacing="0" ColumnSpacing="0" Margin="0" Padding="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Title}"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium" 
+                                   Grid.Column="0"/>
+                                <Image  
+                                VerticalOptions="CenterAndExpand" 
+                                HorizontalOptions="CenterAndExpand" 
+                                x:Name="FactImage" 
+                                Source="{Binding ImageName}"
+                                Grid.Column="1"/>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
